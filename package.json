@@ -4,6 +4,7 @@
   "description": "Development Helper with text transformation tools",
   "version": "0.0.2",
   "icon": "./icon.jpg",
+  "publisher": "wowdw",
   "engines": {
     "vscode": "^1.100.0"
   },
