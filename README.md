@@ -1,5 +1,7 @@
 # PopularTools - 开发辅助工具
 
+本项目采用 [MIT 许可证](LICENSE) 开源。
+
 这是一个提供常用文本转换功能的Visual Studio Code扩展，帮助开发者快速处理文本格式。
 
 ## 功能
