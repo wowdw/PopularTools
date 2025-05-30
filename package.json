@@ -1,0 +1,59 @@
+{
+  "name": "PopularTools",
+  "displayName": "Popular tools",
+  "description": "Development Helper with text transformation tools",
+  "version": "0.0.2",
+  "engines": {
+    "vscode": "^1.100.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wowdw/PopularTools.git"
+  },
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      { "command": "dev-helper.toUpperCase", "title": "小写转大写" },
+      { "command": "dev-helper.toCamelCase", "title": "转小驼峰" },
+      { "command": "dev-helper.toPascalCase", "title": "转大驼峰" },
+      { "command": "dev-helper.formatJSON", "title": "格式化JSON" }
+    ],
+    "menus": {
+      "editor/context": [
+        { "submenu": "dev-helper.menu", "when": "editorHasSelection", "group": "navigation@1" }
+      ],
+      "dev-helper.menu": [
+        { "command": "dev-helper.toUpperCase" },
+        { "command": "dev-helper.toCamelCase" },
+        { "command": "dev-helper.toPascalCase" },
+        { "command": "dev-helper.formatJSON" }
+      ]
+    },
+    "submenus": [
+      { "id": "dev-helper.menu", "label": "开发辅助工具" }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.100.0",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "20.x",
+    "@typescript-eslint/eslint-plugin": "^8.31.1",
+    "@typescript-eslint/parser": "^8.31.1",
+    "eslint": "^9.25.1",
+    "typescript": "^5.8.3",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.5.2"
+  }
+}
